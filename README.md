@@ -62,6 +62,24 @@ crud-basic/
 ├── .env.example
 └── README.md
 
-
 CompileDaemon -build "go build -o server ." -command "./server"
 
+
+```
+
+## 🧪 Testing
+Unit tests: go test ./...
+
+## Lint: golangci-lint run
+
+API smoke test: curl -X GET :3000/ping
+
+## 🚚 Deployment notes
+Build once, run anywhere: the final Alpine image is <20 MB.
+
+Set GIN_MODE=release in prod.
+
+If using an external Postgres, change DB_HOST and remove the db: service.
+
+## 🙏 Credits
+Inspired by examples in the Gin, GORM, Docker and PostgreSQL communities.
