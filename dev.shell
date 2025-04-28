@@ -1,0 +1,6 @@
+export PORT=3000
+CompileDaemon \
+  -graceful-kill \
+  -graceful-timeout=2 \
+  -build="go build -o server ." \
+  -command="./server"
